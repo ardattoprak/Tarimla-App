@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context=".MyAddsFragment">
 
+    <Button
+        android:id="@+id/button6"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:textSize="1sp"
+        app:icon="@drawable/baseline_filter_alt_24"
+        app:iconSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -25,7 +37,7 @@
             android:src="@mipmap/tarimla_icon" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/HelloTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -42,15 +54,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="62dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/baseline_edit_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
