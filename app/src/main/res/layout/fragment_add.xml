@@ -51,7 +51,7 @@
             android:textSize="20sp" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/productSpinner"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
@@ -103,7 +103,7 @@
             android:textSize="20sp" />
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/citySpinner"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
@@ -111,7 +111,7 @@
             android:layout_marginRight="40dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/saveButton"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="100dp"
             android:backgroundTint="#44B848"
-            android:text="Button"
+            android:text="Add Product"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </FrameLayout>

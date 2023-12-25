@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <Button
-        android:id="@+id/button5"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="."
-        android:textSize="1sp"
-        app:icon="@drawable/baseline_filter_alt_24"
-        app:iconPadding="0dp"
-        app:iconSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -40,25 +27,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_weight="6"
+            android:layout_weight="5"
             android:text="Hello Arda"
             android:textColor="#479F4A"
             android:textSize="34sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button3"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="."
-            android:textSize="1sp"
-            app:icon="@drawable/baseline_person_24"
-            app:iconSize="40dp"
-            app:iconTint="#479F4A" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:contentDescription="."
+            android:elevation="@dimen/cardview_default_elevation"
+            android:src="@drawable/baseline_person_24" />
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="5dp"
+        android:background="#FFFFFF"
+        android:contentDescription="."
+        android:elevation="@dimen/cardview_default_elevation"
+        android:src="@drawable/baseline_filter_alt_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ListView
         android:layout_width="0dp"
@@ -67,6 +64,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
