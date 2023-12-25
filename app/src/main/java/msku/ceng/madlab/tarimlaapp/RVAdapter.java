@@ -37,10 +37,17 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNes
         holder.satirCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //bu func u kullanarak segue yi çalıştırız, veya bu olmazsa position öğesini gerekli fragment dosyasındaki functiona yollarız.
                 Toast.makeText(mcontext,"Row number : " + position,Toast.LENGTH_LONG).show();
             }
         });
     }
+
+
+    //CLASSS
+
+
+
     @NonNull
     @Override
     public cardViewTasarimNesneleriniTutucu onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -72,7 +79,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNes
             cityTextCardView = view.findViewById(R.id.cityTextCardView);
             priceTextCardView = view.findViewById(R.id.priceTextCardView);
             descriptionTextCardView = view.findViewById(R.id.descriptionTextCardView);
-
         }
     }
 

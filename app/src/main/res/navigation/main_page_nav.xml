@@ -14,9 +14,30 @@
         android:id="@+id/myAddsFragment"
         android:name="msku.ceng.madlab.tarimlaapp.MyAddsFragment"
         android:label="fragment_my_adds"
-        tools:layout="@layout/fragment_my_adds" />
+        tools:layout="@layout/fragment_my_adds" >
+        <action
+            android:id="@+id/action_myAddsFragment_to_productDetailsPageFragment"
+            app:destination="@id/productDetailsPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="msku.ceng.madlab.tarimlaapp.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsPageFragment"
+            app:destination="@id/productDetailsPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsPageFragment"
+        android:name="msku.ceng.madlab.tarimlaapp.ProductDetailsPageFragment"
+        android:label="fragment_product_details_page"
+        tools:layout="@layout/fragment_product_details_page" />
+    <fragment
+        android:id="@+id/sellerProfileFragment"
+        android:name="msku.ceng.madlab.tarimlaapp.SellerProfileFragment"
+        android:label="fragment_seller_profile"
+        tools:layout="@layout/fragment_seller_profile" />
 </navigation>
