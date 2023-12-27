@@ -1,5 +1,6 @@
 package msku.ceng.madlab.tarimlaapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     private RecyclerView rv;
+
     private ArrayList<Add> adds;
     private RVAdapter adapter;
 
@@ -55,6 +57,7 @@ public class HomeFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 

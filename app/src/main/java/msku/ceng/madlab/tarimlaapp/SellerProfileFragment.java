@@ -13,15 +13,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+
 import androidx.activity.OnBackPressedCallback;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SellerProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SellerProfileFragment extends Fragment {
+
+    private View rootView;
+    private ImageButton backButton1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,7 +66,22 @@ public class SellerProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seller_profile, container, false);
+        rootView = inflater.inflate(R.layout.fragment_seller_profile, container, false);
+
+        return rootView;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        backButton1 = view.findViewById(R.id.backImageButton1);
+
+        backButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_sellerProfileFragment_to_homeFragment);
+            }
+        });
+    }
 }

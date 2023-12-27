@@ -14,20 +14,56 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class LoginActivity extends AppCompatActivity {
-    private BottomNavigationView bottomNavigationView;
+
+    private Button loginButton;
+    private Button registerButton;
+    private Button resetButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+
+        loginButton = findViewById(R.id.login_button);
+        registerButton = findViewById(R.id.register_button);
+        resetButton = findViewById(R.id.reset_button);
 
 
-        bottomNavigationView = findViewById(R.id.bottomNav);
 
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
 
-        NavigationUI.setupWithNavController(bottomNavigationView,navHostFragment.getNavController());
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //firebase de controlünü sağladıktan sonra onaylanırsa geçiş yap
+                //activity maine git
 
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // firebase e uniq id oluşturup gönder
+                //register page e git
+
+                Intent intent = new Intent(LoginActivity.this, RegisterPageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //yapılabilirse reset yap
+            }
+        });
 
     }
 

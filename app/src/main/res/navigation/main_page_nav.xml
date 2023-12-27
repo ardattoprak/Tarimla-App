@@ -16,8 +16,8 @@
         android:label="fragment_my_adds"
         tools:layout="@layout/fragment_my_adds" >
         <action
-            android:id="@+id/action_myAddsFragment_to_productDetailsPageFragment"
-            app:destination="@id/productDetailsPageFragment" />
+            android:id="@+id/action_myAddsFragment_to_productDetailsPage2Fragment"
+            app:destination="@id/productDetailsPage2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -28,16 +28,33 @@
             app:destination="@id/sellerProfileFragment" />
         <action
             android:id="@+id/action_homeFragment_to_productDetailsPageFragment"
-            app:destination="@id/productDetailsPageFragment" />
+            app:destination="@id/productDetailsPageFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/productDetailsPageFragment"
         android:name="msku.ceng.madlab.tarimlaapp.ProductDetailsPageFragment"
         android:label="fragment_product_details_page"
-        tools:layout="@layout/fragment_product_details_page" />
+        tools:layout="@layout/fragment_product_details_page" >
+        <action
+            android:id="@+id/action_productDetailsPageFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sellerProfileFragment"
         android:name="msku.ceng.madlab.tarimlaapp.SellerProfileFragment"
         android:label="fragment_seller_profile"
-        tools:layout="@layout/fragment_seller_profile" />
+        tools:layout="@layout/fragment_seller_profile" >
+        <action
+            android:id="@+id/action_sellerProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsPage2Fragment"
+        android:name="msku.ceng.madlab.tarimlaapp.ProductDetailsPage2Fragment"
+        android:label="ProductDetailsPage2Fragment" >
+        <action
+            android:id="@+id/action_productDetailsPage2Fragment_to_myAddsFragment"
+            app:destination="@id/myAddsFragment" />
+    </fragment>
 </navigation>
