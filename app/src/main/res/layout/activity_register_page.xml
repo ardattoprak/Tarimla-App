@@ -124,6 +124,11 @@
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="text" />
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/register_signup_button"
@@ -137,5 +142,11 @@
         android:backgroundTint="#44B848"
         android:text="Register"
         android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/gotToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="goToLoginPage" />
 
 </LinearLayout>
