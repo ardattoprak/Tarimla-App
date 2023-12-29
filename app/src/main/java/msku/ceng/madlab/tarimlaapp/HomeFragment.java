@@ -1,5 +1,6 @@
 package msku.ceng.madlab.tarimlaapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -19,14 +20,13 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment  {
 
     private RecyclerView rv;
-
     private ArrayList<Add> adds;
     private RVAdapter adapter;
-
     private ImageButton accountButton;
+    public static View v;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -87,9 +87,9 @@ public class HomeFragment extends Fragment {
         rv.setHasFixedSize(true);
 
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
-
         rv.setAdapter(adapter);
 
+        this.v =view;
 
         accountButton = view.findViewById(R.id.imageAccountButton);
         accountButton.setOnClickListener(new View.OnClickListener() {
@@ -97,8 +97,12 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_sellerProfileFragment);
             }
-        });
+        }
+        );
     }
 
+    public static void goToProductDetails(){
+        Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_productDetailsPageFragment);
+    }
 
 }

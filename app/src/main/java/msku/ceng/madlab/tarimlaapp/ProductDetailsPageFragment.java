@@ -1,5 +1,6 @@
 package msku.ceng.madlab.tarimlaapp;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class ProductDetailsPageFragment extends Fragment {
@@ -19,6 +24,19 @@ public class ProductDetailsPageFragment extends Fragment {
     private ImageButton backButton1;
 
     private View rootView;
+
+
+
+    private TextView productName;
+    private TextView productDescription;
+    private TextView productListingDate;
+    private TextView productAmount;
+    private ImageView productImage;
+
+    public static int position;
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,6 +95,23 @@ public class ProductDetailsPageFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         backButton1 = view.findViewById(R.id.backImageButton1);
+        productName = view.findViewById(R.id.productNameTextView);
+        productDescription = view.findViewById(R.id.descriptionTextView);
+        productListingDate = view.findViewById(R.id.listingDateTextView);
+        productAmount = view.findViewById(R.id.amountTextView);
+        productImage = view.findViewById(R.id.productImageView);
+
+        ArrayList<Add> dbDenGelenVeri = Constants.getAddsData();
+
+        Add add =dbDenGelenVeri.get(position);
+
+        productName.setText(add.productName );
+        //productImage
+        productDescription.setText(add.description );
+        //productListingDate.setText(add. );
+        productAmount.setText(add.price);
+
+
         backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,4 +119,5 @@ public class ProductDetailsPageFragment extends Fragment {
             }
         });
     }
+
 }

@@ -19,19 +19,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNesneleriniTutucu> {
+public class RVAdapter2 extends RecyclerView.Adapter<RVAdapter2.cardViewTasarimNesneleriniTutucu2> {
     private Context mcontext;
     private ArrayList<Add> addList;
 
     private static int position;
 
-    public RVAdapter(Context mcontext, ArrayList<Add> addList) {
+    public RVAdapter2(Context mcontext, ArrayList<Add> addList) {
         this.mcontext = mcontext;
         this.addList = addList;
 
     }
     @Override
-    public void onBindViewHolder(@NonNull cardViewTasarimNesneleriniTutucu holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull cardViewTasarimNesneleriniTutucu2 holder, @SuppressLint("RecyclerView") int position) {
         Add add = addList.get(position);
 
         //holder.productImageCardView.setImageDrawable(row.imageView);
@@ -47,8 +47,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNes
                 ProductDetailsPage2Fragment.position = position;
 
 
-
-                HomeFragment.goToProductDetails();
+                MyAddsFragment.goToProductDetails();
             }
         });
     }
@@ -57,9 +56,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNes
 
     @NonNull
     @Override
-    public cardViewTasarimNesneleriniTutucu onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_tasarim, parent, false);
-        return new cardViewTasarimNesneleriniTutucu(itemView);
+    public cardViewTasarimNesneleriniTutucu2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_tasarim, parent, false);
+        return new cardViewTasarimNesneleriniTutucu2(itemView2);
     }
 
 
@@ -69,7 +68,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNes
         return addList.size();
     }
 
-    public class cardViewTasarimNesneleriniTutucu extends RecyclerView.ViewHolder {
+    public class cardViewTasarimNesneleriniTutucu2 extends RecyclerView.ViewHolder {
         public CardView satirCardView;
         public ImageView productImageCardView;
         public TextView productNameTextCardView;
@@ -77,7 +76,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNes
         public TextView priceTextCardView;
         public TextView descriptionTextCardView;
 
-        public cardViewTasarimNesneleriniTutucu(View view) {
+        public cardViewTasarimNesneleriniTutucu2(View view) {
             super(view);
 
             satirCardView = view.findViewById(R.id.satirCardView);

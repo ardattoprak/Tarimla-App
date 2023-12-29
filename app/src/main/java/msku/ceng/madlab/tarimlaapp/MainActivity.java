@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         //bottomNavigationView.setVisibility(View.INVISIBLE);
 
     }
+
+
     /*
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 

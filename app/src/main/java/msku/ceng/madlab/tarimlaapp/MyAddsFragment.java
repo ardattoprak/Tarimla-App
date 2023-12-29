@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,9 +19,11 @@ import java.util.List;
 
 public class MyAddsFragment extends Fragment {
 
-    private RecyclerView rv;
+    private RecyclerView rv2;
     private ArrayList<Add> adds;
-    private RVAdapter adapter;
+    private RVAdapter2 adapter;
+
+    public static View v2;
     
 
     // TODO: Rename parameter arguments, choose names that match
@@ -78,13 +81,21 @@ public class MyAddsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         adds = Constants.getAddsData();
-        adapter = new RVAdapter(getContext(),adds);  //getApplicationConcept de yazxabilridik glb
+        adapter = new RVAdapter2(getContext(),adds);  //getApplicationConcept de yazxabilridik glb
 
-        rv = view.findViewById(R.id.rv);
-        rv.setHasFixedSize(true);
+        rv2 = view.findViewById(R.id.rv);
+        rv2.setHasFixedSize(true);
 
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        rv2.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        rv.setAdapter(adapter);
+        rv2.setAdapter(adapter);
+
+        this.v2 =view;
     }
+    public static void goToProductDetails(){
+        Navigation.findNavController(v2).navigate(R.id.action_myAddsFragment_to_productDetailsPage2Fragment);
+    }
+
+
+
 }
