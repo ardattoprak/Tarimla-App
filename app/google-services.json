@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5801824185",
+    "project_id": "tarimla",
+    "storage_bucket": "tarimla.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5801824185:android:601c4ea1efb21cfd26f068",
+        "android_client_info": {
+          "package_name": "msku.ceng.madlab.tarimlaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTbbHkPFemeYlCqCp-GARMwzZGmlvTnPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
