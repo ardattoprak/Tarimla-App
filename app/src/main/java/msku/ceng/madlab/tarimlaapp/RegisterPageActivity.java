@@ -27,9 +27,23 @@ public class RegisterPageActivity extends AppCompatActivity {
     TextView goToLoginPageText;
     Button registerButton;
     ProgressBar progressBar1;
-
-
     private FirebaseAuth mAuth;
+
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(RegisterPageActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +75,24 @@ public class RegisterPageActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar1.setVisibility(View.VISIBLE);
-                String email, password;
+                String email, password, name, lastName, wareHouse, phoneNumber;
 
+                name = String.valueOf(nameText.getText());
+                lastName = String.valueOf(lastNameText.getText());
                 email = String.valueOf(emailText.getText());
                 password = String.valueOf(passwordText.getText());
+                wareHouse = String.valueOf(wareHouseText.getText());
+                phoneNumber = String.valueOf(phoneNumberText.getText());
+
+
+                if (TextUtils.isEmpty(name)) {
+                    Toast.makeText(RegisterPageActivity.this,"Enter name",Toast.LENGTH_LONG);
+                    return;
+                }
+                if (TextUtils.isEmpty(lastName)) {
+                    Toast.makeText(RegisterPageActivity.this,"Enter lastname",Toast.LENGTH_LONG);
+                    return;
+                }
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(RegisterPageActivity.this,"Enter email",Toast.LENGTH_LONG);
@@ -77,11 +104,18 @@ public class RegisterPageActivity extends AppCompatActivity {
                     return;
                 }
 
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                if (TextUtils.isEmpty(wareHouse)) {
+                    Toast.makeText(RegisterPageActivity.this,"Enter warehouse",Toast.LENGTH_LONG);
+                    return;
+                }
+                if (TextUtils.isEmpty(phoneNumber)) {
+                    Toast.makeText(RegisterPageActivity.this,"Enter phoneNumber",Toast.LENGTH_LONG);
+                    return;
+                }
+
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar1.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     // BURAYI BEN KAPADIM FirebaseUser user = mAuth.getCurrentUser();

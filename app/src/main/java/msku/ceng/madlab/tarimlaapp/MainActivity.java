@@ -26,11 +26,18 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
 
     //private View fragmentView;
+    FirebaseAuth auth;
+    FirebaseUser user;
+    static MainActivity mainActivity;
+
 
     private BottomNavigationView bottomNavigationView;
 
@@ -39,6 +46,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainActivity = MainActivity.this;
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
+        if (user == null){
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        }
+
 
 
         bottomNavigationView = findViewById(R.id.bottomNav);
@@ -54,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
 
         //bottomNavigationView.setVisibility(View.INVISIBLE);
 
+    }
+
+    public static void logOut(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(mainActivity, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        mainActivity.startActivity(intent);
+        mainActivity.finish();
     }
 
 

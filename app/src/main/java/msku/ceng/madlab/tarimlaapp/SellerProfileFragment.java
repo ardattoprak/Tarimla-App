@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.OnBackPressedCallback;
@@ -21,6 +22,8 @@ public class SellerProfileFragment extends Fragment {
 
     private View rootView;
     private ImageButton backButton1;
+
+    private Button logOutButton;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,10 +80,19 @@ public class SellerProfileFragment extends Fragment {
 
         backButton1 = view.findViewById(R.id.backImageButton1);
 
+        logOutButton = view.findViewById(R.id.logOutButton);
+
         backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_sellerProfileFragment_to_homeFragment);
+            }
+        });
+
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.logOut();
             }
         });
     }

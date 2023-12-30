@@ -9,16 +9,21 @@ public class Add {
 
     Drawable drawable;
     public String productName;
+
     public String description;
     public String city;
     public String price;
+    public String amount;
+    public String userEmail;
 
-    public Add(Drawable drawable, String productName, String description, String city, String price) {
-        this.drawable = drawable;
+    public Add(String productName, String description, String city, String price, String amount, String userEmail) {
+
         this.productName = productName;
         this.description = description;
         this.city = city;
         this.price = price;
+        this.amount = amount;
+        this.userEmail = userEmail;
     }
 
 }

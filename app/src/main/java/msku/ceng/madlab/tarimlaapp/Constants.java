@@ -61,8 +61,8 @@ public class Constants {
 
         Drawable drawable1 = null;
 
-        Add add1 = new Add(drawable1, "patates", "Patates satışta", "Edirne", "2000" );
-        Add add2 = new Add(drawable1,"domates", "Domates satışta", "İstanbul", "10" );
+        Add add1 = new Add( "patates", "Patates satışta", "Edirne", "2000" , "1" , "email1");
+        Add add2 = new Add("domates", "Domates satışta", "İstanbul", "10" ,"2", "email2");
 
         addList.add(add1);
         addList.add(add2);
