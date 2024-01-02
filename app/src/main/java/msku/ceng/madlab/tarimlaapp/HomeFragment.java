@@ -86,6 +86,7 @@ public class HomeFragment extends Fragment  {
 
 
         Constants.getDatasFromDb();
+        Constants.getUsersFromDb();
 
 
         adds = Constants.Adds;

@@ -119,7 +119,7 @@ public class AddFragment extends Fragment {
         saveButton = view.findViewById(R.id.saveButton);
 
         spinnerProducts = Constants.getProductSpinnerChoises();
-        spinnerCities = Constants.getCitySpinnerChoises();
+        spinnerCities = Constants.getCitySpinnerChoices();
 
         productAdapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_list_item_1,

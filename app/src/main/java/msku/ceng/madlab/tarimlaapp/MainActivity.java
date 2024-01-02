@@ -13,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
+
+
         Constants.db = FirebaseFirestore.getInstance();
 
         if (user == null) {

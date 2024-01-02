@@ -10,11 +10,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 
@@ -24,6 +26,13 @@ public class SellerProfileFragment extends Fragment {
     private ImageButton backButton1;
 
     private Button logOutButton;
+    private TextView nameText;
+    private TextView phoneText;
+    private TextView emailText;
+    private TextView cityText;
+    private TextView wareHouseCapacity;
+    UsersInfo user = null;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -81,6 +90,33 @@ public class SellerProfileFragment extends Fragment {
         backButton1 = view.findViewById(R.id.backImageButton1);
 
         logOutButton = view.findViewById(R.id.logOutButton);
+
+
+        nameText = view.findViewById(R.id.userNameText);
+        phoneText = view.findViewById(R.id.phoneNumberText);
+        emailText = view.findViewById(R.id.userEmailText);
+        cityText = view.findViewById(R.id.userCityText);
+        wareHouseCapacity = view.findViewById(R.id.userWareHouseCapacity);
+
+
+        String userEmail = MainActivity.user.getEmail();
+
+
+
+        for (int i = 0; i < Constants.Users.toArray().length; i++){
+
+            String email = Constants.Users.get(i).email;
+
+            if (userEmail.equals(email)){
+                user = Constants.Users.get(i);
+            }
+        }
+
+        nameText.setText(user.name);
+        phoneText.setText(user.phoneNumber);
+        emailText.setText(user.email);
+        cityText.setText(user.city);
+        wareHouseCapacity.setText(user.wareHouseCapacity);
 
         backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
