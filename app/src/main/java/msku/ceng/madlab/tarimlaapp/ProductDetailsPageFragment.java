@@ -101,7 +101,7 @@ public class ProductDetailsPageFragment extends Fragment {
         productAmount = view.findViewById(R.id.amountTextView);
         productImage = view.findViewById(R.id.productImageView);
 
-        ArrayList<Add> dbDenGelenVeri = Constants.getAddsData();
+        ArrayList<Add> dbDenGelenVeri = Constants.Adds;
 
         Add add =dbDenGelenVeri.get(position);
 

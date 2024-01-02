@@ -1,42 +1,28 @@
 package msku.ceng.madlab.tarimlaapp;
 
-import androidx.activity.OnBackPressedCallback;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-
-import androidx.activity.OnBackPressedCallback;
-import androidx.fragment.app.Fragment;
+import android.os.Handler;
+import android.os.Looper;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
 
 
     //private View fragmentView;
-    FirebaseAuth auth;
-    FirebaseUser user;
+    static FirebaseAuth auth;
+    static FirebaseUser user;
     static MainActivity mainActivity;
+
+
 
 
     private BottomNavigationView bottomNavigationView;
@@ -51,30 +37,25 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+        Constants.db = FirebaseFirestore.getInstance();
 
-        if (user == null){
+        if (user == null) {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
+        } else {
+            // User is not null, fetch data from the database
+
         }
-
-
 
         bottomNavigationView = findViewById(R.id.bottomNav);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
 
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
-
-
-
-        //MyOnBackPressedCallback callback = new MyOnBackPressedCallback(true, this);
-        //getOnBackPressedDispatcher().addCallback(this, callback);
-
-        //bottomNavigationView.setVisibility(View.INVISIBLE);
-
     }
+
 
     public static void logOut(){
         FirebaseAuth.getInstance().signOut();
@@ -84,13 +65,10 @@ public class MainActivity extends AppCompatActivity {
         mainActivity.finish();
     }
 
-
     /*
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = findViewById(R.id.navHostFragment).getRootView();
-
-
 
         // Fragment'ın view'unu sakla
         fragmentView = rootView;
@@ -98,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         return rootView;
     }
     */
-
 
 /*
     private static class MyOnBackPressedCallback extends OnBackPressedCallback {

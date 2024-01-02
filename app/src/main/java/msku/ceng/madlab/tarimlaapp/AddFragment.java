@@ -192,8 +192,8 @@ public class AddFragment extends Fragment {
 
 
 
-                Toast.makeText(view.getContext(), "Product selected : " + spinnerProducts.get(productSpinner.getSelectedItemPosition()), Toast.LENGTH_SHORT).show();
-                Toast.makeText(view.getContext(), "Product selected : " + spinnerCities.get(citySpinner.getSelectedItemPosition()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(view.getContext(), "Product selected : " + spinnerProducts.get(productSpinner.getSelectedItemPosition()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(view.getContext(), "Product selected : " + spinnerCities.get(citySpinner.getSelectedItemPosition()), Toast.LENGTH_SHORT).show();
             }
         });
     }

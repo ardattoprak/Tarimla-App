@@ -102,7 +102,7 @@ public class ProductDetailsPage2Fragment extends Fragment {
         productAmount2 = view.findViewById(R.id.amountTextView);
         productImage2 = view.findViewById(R.id.productImageView);
 
-        ArrayList<Add> dbDenGelenVeri = Constants.getAddsData();
+        ArrayList<Add> dbDenGelenVeri = Constants.Adds;
 
         Add add =dbDenGelenVeri.get(position);
 
