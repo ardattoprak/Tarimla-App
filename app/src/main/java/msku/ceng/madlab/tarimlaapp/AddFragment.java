@@ -165,7 +165,7 @@ public class AddFragment extends Fragment {
             public void onClick(View v) {
 
                 String productName = spinnerProducts.get(productSpinner.getSelectedItemPosition());
-                String city = spinnerCities.get(productSpinner.getSelectedItemPosition());
+                String city = spinnerCities.get(citySpinner.getSelectedItemPosition());
 
                 String userEmail = user.getEmail();
 
