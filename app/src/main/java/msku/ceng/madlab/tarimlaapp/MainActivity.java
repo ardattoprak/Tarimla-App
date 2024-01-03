@@ -1,6 +1,7 @@
 package msku.ceng.madlab.tarimlaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -23,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     static FirebaseUser user;
     static MainActivity mainActivity;
 
-
-
-
     private BottomNavigationView bottomNavigationView;
+
+    boolean isFirstTime = true;
+
 
 
     @Override
@@ -50,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
             finish();
         } else {
             // User is not null, fetch data from the database
-
         }
 
         bottomNavigationView = findViewById(R.id.bottomNav);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
+        NavController navController = navHostFragment.getNavController();
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
     }
 
 

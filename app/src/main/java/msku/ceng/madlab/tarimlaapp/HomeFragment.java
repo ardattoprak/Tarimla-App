@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,12 @@ public class HomeFragment extends Fragment  {
     private RVAdapter adapter;
     private ImageButton accountButton;
     public static View v;
+    private TextView helloTextView;
+
+
+    UsersInfo user = null;
+
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -70,13 +77,14 @@ public class HomeFragment extends Fragment  {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
 
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
@@ -85,9 +93,23 @@ public class HomeFragment extends Fragment  {
         super.onViewCreated(view, savedInstanceState);
 
 
+
         Constants.getDatasFromDb();
         Constants.getUsersFromDb();
 
+//        helloTextView = view.findViewById(R.id.HelloTextView);
+//        String userEmail = MainActivity.user.getEmail();
+//
+//        for (int i = 0; i < Constants.Users.toArray().length; i++){
+//
+//            String email = Constants.Users.get(i).email;
+//
+//            if (userEmail.equals(email)){
+//                user = Constants.Users.get(i);
+//            }
+//        }
+//
+//        helloTextView.setText(user.name);
 
         adds = Constants.Adds;
         adapter = new RVAdapter(getContext(),adds);  //getApplicationConcept de yazxabilridik glb
@@ -113,5 +135,7 @@ public class HomeFragment extends Fragment  {
     public static void goToProductDetails(){
         Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_productDetailsPageFragment);
     }
+
+
 
 }

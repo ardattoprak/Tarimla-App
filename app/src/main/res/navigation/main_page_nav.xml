@@ -30,6 +30,9 @@
             android:id="@+id/action_homeFragment_to_productDetailsPageFragment"
             app:destination="@id/productDetailsPageFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_addFragment"
+            app:destination="@id/addFragment" />
     </fragment>
     <fragment
         android:id="@+id/productDetailsPageFragment"

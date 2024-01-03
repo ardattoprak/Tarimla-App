@@ -170,11 +170,12 @@ public class RegisterPageActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 UsersInfo user = new UsersInfo(name,lastName,email,wareHouse,phoneNumber,city);
                                 if (task.isSuccessful()) {
+                                    Constants.setUsersToDb(user);
                                     // Sign in success, update UI with the signed-in user's information
                                     // BURAYI BEN KAPADIM FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(RegisterPageActivity.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
-                                    Constants.setUsersToDb(user);
+
                                 } else {
                                     // If sign in fails, display a message to the user.
 

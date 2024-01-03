@@ -29,10 +29,6 @@ public class Constants {
     public static ArrayList<Add> Adds = new ArrayList<>();
     public static ArrayList<UsersInfo> Users = new ArrayList<>();
 
-
-
-
-
     static FirebaseFirestore db ;
 
 
@@ -73,7 +69,7 @@ public class Constants {
         db.collection("Users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-
+                        Constants.getUsersFromDb();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
