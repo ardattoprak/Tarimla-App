@@ -102,6 +102,7 @@ public class MyAddsFragment extends Fragment {
             }
         }
 
+
         adapter = new RVAdapter2(getContext(),tempAdds);  //getApplicationConcept de yazxabilridik glb
 
         rv2 = view.findViewById(R.id.rv);

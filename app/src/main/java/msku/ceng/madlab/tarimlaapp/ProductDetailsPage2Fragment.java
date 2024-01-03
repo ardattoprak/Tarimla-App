@@ -104,8 +104,20 @@ public class ProductDetailsPage2Fragment extends Fragment {
 
         ArrayList<Add> dbDenGelenVeri = Constants.Adds;
 
+        ArrayList<Add> tempAdds =  new ArrayList<>();
 
-        Add add =dbDenGelenVeri.get(position);
+        String userEmail = MainActivity.user.getEmail();
+
+        for (int i = 0; i < Constants.Adds.toArray().length; i++){
+            Add add = dbDenGelenVeri.get(i);
+
+            if (add.userEmail.equals(userEmail)){
+                tempAdds.add(add);
+            }
+        }
+
+
+        Add add = tempAdds.get(position);
 
         productName2.setText(add.productName );
         //productImage

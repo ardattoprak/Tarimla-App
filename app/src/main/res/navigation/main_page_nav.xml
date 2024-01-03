@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_productDetailsPageFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_productDetailsPageFragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/sellerProfileFragment"
@@ -59,5 +62,8 @@
         <action
             android:id="@+id/action_productDetailsPage2Fragment_to_myAddsFragment"
             app:destination="@id/myAddsFragment" />
+        <action
+            android:id="@+id/action_productDetailsPage2Fragment_to_sellerProfileFragment"
+            app:destination="@id/sellerProfileFragment" />
     </fragment>
 </navigation>
