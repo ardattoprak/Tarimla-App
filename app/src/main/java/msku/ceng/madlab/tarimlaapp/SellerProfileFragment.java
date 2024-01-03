@@ -104,7 +104,6 @@ public class SellerProfileFragment extends Fragment {
 
 
         for (int i = 0; i < Constants.Users.toArray().length; i++){
-
             String email = Constants.Users.get(i).email;
 
             if (userEmail.equals(email)){

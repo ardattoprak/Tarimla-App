@@ -87,8 +87,22 @@ public class MyAddsFragment extends Fragment {
 
 
 
+
         adds = Constants.Adds;
-        adapter = new RVAdapter2(getContext(),adds);  //getApplicationConcept de yazxabilridik glb
+
+        ArrayList<Add> tempAdds =  new ArrayList<>();
+
+        String userEmail = MainActivity.user.getEmail();
+
+        for (int i = 0; i < Constants.Adds.toArray().length; i++){
+            Add add = adds.get(i);
+
+            if (add.userEmail.equals(userEmail)){
+               tempAdds.add(add);
+            }
+        }
+
+        adapter = new RVAdapter2(getContext(),tempAdds);  //getApplicationConcept de yazxabilridik glb
 
         rv2 = view.findViewById(R.id.rv);
         rv2.setHasFixedSize(true);

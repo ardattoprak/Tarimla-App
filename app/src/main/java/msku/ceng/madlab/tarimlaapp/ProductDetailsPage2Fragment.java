@@ -104,6 +104,7 @@ public class ProductDetailsPage2Fragment extends Fragment {
 
         ArrayList<Add> dbDenGelenVeri = Constants.Adds;
 
+
         Add add =dbDenGelenVeri.get(position);
 
         productName2.setText(add.productName );

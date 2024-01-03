@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_weight="5"
-            android:text="Hello Arda"
+            android:text="Welcome"
             android:textColor="#479F4A"
             android:textSize="34sp"
             android:textStyle="bold" />
