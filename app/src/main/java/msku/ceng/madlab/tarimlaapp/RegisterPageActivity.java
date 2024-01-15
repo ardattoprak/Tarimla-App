@@ -168,8 +168,9 @@ public class RegisterPageActivity extends AppCompatActivity {
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                UsersInfo user = new UsersInfo(name,lastName,email,wareHouse,phoneNumber,city);
+
                                 if (task.isSuccessful()) {
+                                    UsersInfo user = new UsersInfo(name,lastName,email,wareHouse,phoneNumber,city);
                                     Constants.setUsersToDb(user);
                                     // Sign in success, update UI with the signed-in user's information
                                     // BURAYI BEN KAPADIM FirebaseUser user = mAuth.getCurrentUser();
@@ -181,7 +182,6 @@ public class RegisterPageActivity extends AppCompatActivity {
 
                                     Toast.makeText(RegisterPageActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
-                                    return;
                                 }
 
                             }

@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         user = auth.getCurrentUser();
 
 
+        //logOut();
+
+
 
         Constants.db = FirebaseFirestore.getInstance();
 

@@ -16,6 +16,7 @@ public class Add {
     public String amount;
     public String userEmail;
 
+
     public Add(String productName, String description, String city, String price, String amount, String userEmail) {
 
         this.productName = productName;

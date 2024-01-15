@@ -40,6 +40,8 @@ public class RVAdapter2 extends RecyclerView.Adapter<RVAdapter2.cardViewTasarimN
         holder.priceTextCardView.setText(add.price);
         holder.descriptionTextCardView.setText(add.description);
 
+        holder.productImageCardView.setImageResource(Constants.getImageId(add));
+
         holder.satirCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

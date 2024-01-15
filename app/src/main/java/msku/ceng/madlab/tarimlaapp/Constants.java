@@ -162,4 +162,46 @@ public class Constants {
 
     }
 
+    public static int getImageId(Add add){
+        String name = add.productName;
+        switch(name) {
+            case "Tomato":
+                return R.mipmap.domates;
+
+            case "Onion":
+                return R.mipmap.onion;
+
+            case "Milk":
+                return R.mipmap.milk;
+
+            case "Potatoes":
+                return R.mipmap.potatoes;
+
+            case "Apple":
+                return R.mipmap.apple;
+
+            case "Barley":
+                return R.mipmap.barley;
+
+            case "Pepper":
+                return R.mipmap.pepper;
+
+            case "Wheat":
+                return R.mipmap.wheat;
+
+            case "Orange":
+                return R.mipmap.orange;
+
+            case "Egg":
+                return R.mipmap.egg;
+
+            case "Olive":
+                return R.mipmap.olive;
+
+
+            default:
+                return R.mipmap.tarimla_icon;
+        }
+    }
+
 }

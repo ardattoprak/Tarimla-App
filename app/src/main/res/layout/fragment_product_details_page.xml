@@ -92,29 +92,6 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_weight="5"
-        android:text="Listing Date"
-        android:textColor="#368F3A"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/listingDateTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:layout_weight="5"
-        android:text="18/11/2023"
-        android:textSize="16sp" />
-
-    <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -136,18 +113,50 @@
         android:text="1000 kg"
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.Material3.Button.ElevatedButton"
+    <TextView
+        android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_weight="5"
-        android:text="See Seller Details"
-        android:textColor="#479F4A"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="600dp" />
+        android:text="Seller's Email"
+        android:textColor="#368F3A"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sellersEmailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="5"
+        android:text="arda@gmail.com"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="5"
+        android:text="Price"
+        android:textColor="#368F3A"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="5"
+        android:text="5000"
+        android:textSize="16sp" />
 
 </LinearLayout>

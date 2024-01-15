@@ -34,7 +34,6 @@ public class AddFragment extends Fragment {
     private Spinner productSpinner;
     private Spinner citySpinner;
 
-
     private ArrayList<String> spinnerProducts;
     private ArrayList<String> spinnerCities;
 
@@ -45,7 +44,6 @@ public class AddFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
-
 
     private Button saveButton;
 

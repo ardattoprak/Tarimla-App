@@ -10,9 +10,12 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 
@@ -34,9 +37,10 @@ public class ProductDetailsPage2Fragment extends Fragment {
 
     private TextView productName2;
     private TextView productDescription2;
-    private TextView productListingDate2;
+    private TextView productSellerEmail2;
     private TextView productAmount2;
     private ImageView productImage2;
+
 
 
 
@@ -98,9 +102,11 @@ public class ProductDetailsPage2Fragment extends Fragment {
         backButton2 = view.findViewById(R.id.backImageButton1);
         productName2 = view.findViewById(R.id.productNameTextView);
         productDescription2 = view.findViewById(R.id.descriptionTextView);
-        productListingDate2 = view.findViewById(R.id.listingDateTextView);
+        productSellerEmail2 = view.findViewById(R.id.sellersEmailTextView2);
         productAmount2 = view.findViewById(R.id.amountTextView);
         productImage2 = view.findViewById(R.id.productImageView);
+
+
 
         ArrayList<Add> dbDenGelenVeri = Constants.Adds;
 
@@ -124,7 +130,8 @@ public class ProductDetailsPage2Fragment extends Fragment {
         productDescription2.setText(add.description );
         //productListingDate.setText(add. );
         productAmount2.setText(add.price);
-
+        productSellerEmail2.setText(userEmail.toString());
+        productImage2.setImageResource(Constants.getImageId(add));
 
         backButton2.setOnClickListener(new View.OnClickListener() {
             @Override

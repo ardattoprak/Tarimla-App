@@ -1,6 +1,5 @@
 package msku.ceng.madlab.tarimlaapp;
 
-import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +10,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,9 +29,12 @@ public class ProductDetailsPageFragment extends Fragment {
 
     private TextView productName;
     private TextView productDescription;
-    private TextView productListingDate;
+    private TextView productSellerEmail1;
     private TextView productAmount;
     private ImageView productImage;
+
+
+
 
     public static int position;
 
@@ -97,9 +100,10 @@ public class ProductDetailsPageFragment extends Fragment {
         backButton1 = view.findViewById(R.id.backImageButton1);
         productName = view.findViewById(R.id.productNameTextView);
         productDescription = view.findViewById(R.id.descriptionTextView);
-        productListingDate = view.findViewById(R.id.listingDateTextView);
+        productSellerEmail1 = view.findViewById(R.id.sellersEmailTextView);
         productAmount = view.findViewById(R.id.amountTextView);
         productImage = view.findViewById(R.id.productImageView);
+
 
         ArrayList<Add> dbDenGelenVeri = Constants.Adds;
 
@@ -110,6 +114,11 @@ public class ProductDetailsPageFragment extends Fragment {
         productDescription.setText(add.description );
         //productListingDate.setText(add. );
         productAmount.setText(add.price);
+        productSellerEmail1.setText(add.userEmail);
+        productImage.setImageResource(Constants.getImageId(add));
+
+        //BURAYA İF ELSE İLE YAZICAZ R.İD.RESMİN İSMİ FALAN YAPICAZ KOALY İŞ
+        //productImage.setImageResource();
 
 
         backButton1.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +127,10 @@ public class ProductDetailsPageFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_productDetailsPageFragment_to_homeFragment);
             }
         });
+
+
+
+
     }
 
 }
