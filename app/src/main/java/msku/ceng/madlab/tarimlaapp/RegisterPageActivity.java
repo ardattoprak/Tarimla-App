@@ -1,14 +1,9 @@
 package msku.ceng.madlab.tarimlaapp;
-
-import static java.security.AccessController.getContext;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,41 +13,26 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.ArrayList;
 
 public class RegisterPageActivity extends AppCompatActivity {
-
     EditText nameText,lastNameText, emailText, passwordText, wareHouseText, phoneNumberText;
     TextView goToLoginPageText;
     Button registerButton;
     ProgressBar progressBar1;
     private FirebaseAuth mAuth;
-
     private Spinner cityRegisterSpinner;
-
     private ArrayList<String> spinnerCitiesRegister;
-
     private ArrayAdapter<String> cityRegisterAdapter;
-
-
-    FirebaseFirestore dbb ;
-
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // Check if user is signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent intent = new Intent(RegisterPageActivity.this, MainActivity.class);
@@ -61,8 +41,6 @@ public class RegisterPageActivity extends AppCompatActivity {
             finish();
         }
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,9 +57,7 @@ public class RegisterPageActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.register_signup_button);
         progressBar1 = findViewById(R.id.progressBar1);
         goToLoginPageText = findViewById(R.id.gotToLogin);
-
         cityRegisterSpinner = findViewById(R.id.cityRegisterSpinner);
-
         spinnerCitiesRegister = Constants.getCitySpinnerChoices();
 
         cityRegisterAdapter = new ArrayAdapter<>(getApplicationContext(),
@@ -91,22 +67,16 @@ public class RegisterPageActivity extends AppCompatActivity {
 
         cityRegisterSpinner.setAdapter(cityRegisterAdapter);
 
-
         cityRegisterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 //Toast.makeText(view.getContext(), "Product selected : " + spinnerCities.get(position), Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
-
-
-
 
         goToLoginPageText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +86,6 @@ public class RegisterPageActivity extends AppCompatActivity {
                 finish();
             }
         });
-
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,8 +99,6 @@ public class RegisterPageActivity extends AppCompatActivity {
                 wareHouse = String.valueOf(wareHouseText.getText());
                 phoneNumber = String.valueOf(phoneNumberText.getText());
                 String city = spinnerCitiesRegister.get(cityRegisterSpinner.getSelectedItemPosition());
-
-
 
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(RegisterPageActivity.this,"Enter name",Toast.LENGTH_LONG);
@@ -172,14 +139,12 @@ public class RegisterPageActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     UsersInfo user = new UsersInfo(name,lastName,email,wareHouse,phoneNumber,city);
                                     Constants.setUsersToDb(user);
-                                    // Sign in success, update UI with the signed-in user's information
-                                    // BURAYI BEN KAPADIM FirebaseUser user = mAuth.getCurrentUser();
+                                    // Sign in success
                                     Toast.makeText(RegisterPageActivity.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-
                                     Toast.makeText(RegisterPageActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }

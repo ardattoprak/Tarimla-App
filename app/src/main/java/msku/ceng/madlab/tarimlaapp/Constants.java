@@ -1,37 +1,23 @@
 package msku.ceng.madlab.tarimlaapp;
 
-
-
 import static android.content.ContentValues.TAG;
-
-import android.graphics.drawable.Drawable;
 import android.util.Log;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 
 public class Constants {
-
-
     public static ArrayList<Add> Adds = new ArrayList<>();
     public static ArrayList<UsersInfo> Users = new ArrayList<>();
-
     static FirebaseFirestore db ;
-
-
 
     public static void getUsersFromDb() {
 
@@ -47,14 +33,6 @@ public class Constants {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
 
                                 UsersInfo user = new UsersInfo(document.getString("name"),document.getString("lastName"),document.getString("email"),document.getString("wareHouseCapacity"),document.getString("phoneNumber"),document.getString("city"));
-
-
-                                // Or if you have setter methods
-                                // Add add = new Add();
-                                // add.setId(document.getId());
-                                // add.setSomeProperty(document.getString("someProperty"));
-
-                                // Add the created Add object to your list or perform any other operations
                                 userTemp.add(user);
                             }
                             Users = userTemp;
@@ -78,11 +56,8 @@ public class Constants {
 
                     }
                 });
-
     }
-
     public static void getDatasFromDb() {
-
         db.collection("Adds")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -111,7 +86,6 @@ public class Constants {
                 });
     }
 
-
     public static ArrayList<String> getProductSpinnerChoises(){
         ArrayList<String> products = new ArrayList<>();
 
@@ -129,7 +103,6 @@ public class Constants {
         }
         return products;
     }
-
     public static ArrayList<String> getCitySpinnerChoices() {
         ArrayList<String> cities = new ArrayList<>();
 
@@ -158,10 +131,7 @@ public class Constants {
         }
 
         return cities;
-
-
     }
-
     public static int getImageId(Add add){
         String name = add.productName;
         switch(name) {
@@ -197,11 +167,8 @@ public class Constants {
 
             case "Olive":
                 return R.mipmap.olive;
-
-
             default:
                 return R.mipmap.tarimla_icon;
         }
     }
-
 }

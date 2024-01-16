@@ -1,99 +1,34 @@
 package msku.ceng.madlab.tarimlaapp;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.checkerframework.checker.units.qual.C;
-
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProductDetailsPage2Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProductDetailsPage2Fragment extends Fragment {
-
-
     public static int position;
-
     private ImageButton backButton2;
-
     private View rootView;
-
-
-
     private TextView productName2;
     private TextView productDescription2;
     private TextView productSellerEmail2;
     private TextView productAmount2;
+    private TextView priceTextView2;
     private ImageView productImage2;
 
-
-
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ProductDetailsPage2Fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProductDetailsPage2Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ProductDetailsPage2Fragment newInstance(String param1, String param2) {
-        ProductDetailsPage2Fragment fragment = new ProductDetailsPage2Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_product_details_page2, container, false);
         return rootView;
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -105,11 +40,9 @@ public class ProductDetailsPage2Fragment extends Fragment {
         productSellerEmail2 = view.findViewById(R.id.sellersEmailTextView2);
         productAmount2 = view.findViewById(R.id.amountTextView);
         productImage2 = view.findViewById(R.id.productImageView);
-
-
+        priceTextView2 = view.findViewById(R.id.priceTextView2);
 
         ArrayList<Add> dbDenGelenVeri = Constants.Adds;
-
         ArrayList<Add> tempAdds =  new ArrayList<>();
 
         String userEmail = MainActivity.user.getEmail();
@@ -122,16 +55,14 @@ public class ProductDetailsPage2Fragment extends Fragment {
             }
         }
 
-
         Add add = tempAdds.get(position);
 
         productName2.setText(add.productName );
-        //productImage
         productDescription2.setText(add.description );
-        //productListingDate.setText(add. );
-        productAmount2.setText(add.price);
+        productAmount2.setText(add.amount);
         productSellerEmail2.setText(userEmail.toString());
         productImage2.setImageResource(Constants.getImageId(add));
+        priceTextView2.setText(add.price + "TL");
 
         backButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +71,4 @@ public class ProductDetailsPage2Fragment extends Fragment {
             }
         });
     }
-
-
 }
