@@ -130,29 +130,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/register_signup_button"
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="120dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="10"
         android:backgroundTint="#44B848"
         android:text="Register"
         android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/gotToLogin"
+    <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="match_parent"
+        android:id="@+id/backToLoginButton"
         android:layout_height="wrap_content"
-        android:text="goToLoginPage" />
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_weight="1"
+        android:text="Back To Login"
+        android:textColor="#44B848"
+        android:textSize="14sp" />
 
 </LinearLayout>

@@ -22,9 +22,8 @@ import java.util.ArrayList;
 
 public class RegisterPageActivity extends AppCompatActivity {
     EditText nameText,lastNameText, emailText, passwordText, wareHouseText, phoneNumberText;
-    TextView goToLoginPageText;
     Button registerButton;
-    ProgressBar progressBar1;
+    Button backLoginButton;
     private FirebaseAuth mAuth;
     private Spinner cityRegisterSpinner;
     private ArrayList<String> spinnerCitiesRegister;
@@ -55,8 +54,7 @@ public class RegisterPageActivity extends AppCompatActivity {
         wareHouseText = findViewById(R.id.warehouse_capacity_signup_edit_text);
         phoneNumberText = findViewById(R.id.phone_number_signup_edit_text);
         registerButton = findViewById(R.id.register_signup_button);
-        progressBar1 = findViewById(R.id.progressBar1);
-        goToLoginPageText = findViewById(R.id.gotToLogin);
+        backLoginButton = findViewById(R.id.backToLoginButton);
         cityRegisterSpinner = findViewById(R.id.cityRegisterSpinner);
         spinnerCitiesRegister = Constants.getCitySpinnerChoices();
 
@@ -78,7 +76,7 @@ public class RegisterPageActivity extends AppCompatActivity {
             }
         });
 
-        goToLoginPageText.setOnClickListener(new View.OnClickListener() {
+        backLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterPageActivity.this,LoginActivity.class);
