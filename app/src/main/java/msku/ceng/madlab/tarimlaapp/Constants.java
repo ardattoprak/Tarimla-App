@@ -11,14 +11,12 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 
 public class Constants {
     public static ArrayList<Add> Adds = new ArrayList<>();
     public static ArrayList<UsersInfo> Users = new ArrayList<>();
     static FirebaseFirestore db ;
-
     public static void getUsersFromDb() {
 
         db.collection("Users")
@@ -47,13 +45,13 @@ public class Constants {
         db.collection("Users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        //..
                         Constants.getUsersFromDb();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
                     }
                 });
     }
@@ -129,7 +127,6 @@ public class Constants {
         for (String cityName : cityNames) {
             cities.add(cityName);
         }
-
         return cities;
     }
     public static int getImageId(Add add){
