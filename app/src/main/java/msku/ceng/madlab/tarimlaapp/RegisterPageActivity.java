@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 
-public class RegisterPageActivity extends AppCompatActivity {
+public class RegisterPageActivity extends AppCompatActivity { // Written by Burak Yılmaz
     EditText nameText,lastNameText, emailText, passwordText, wareHouseText, phoneNumberText;
     Button registerButton;
     Button backLoginButton;

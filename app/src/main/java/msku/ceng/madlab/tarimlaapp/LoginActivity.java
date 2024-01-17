@@ -15,11 +15,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity { // Written by Burak Yılmaz
     private Button loginButton;
     private Button registerButton;
     private TextView emailTextView, passwordTextView;
     private FirebaseAuth mAuth;
+
+    //first onCreate , second onStart
     @Override
     public void onStart() {
         super.onStart();

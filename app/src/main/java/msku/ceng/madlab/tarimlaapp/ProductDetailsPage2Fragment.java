@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class ProductDetailsPage2Fragment extends Fragment {
+public class ProductDetailsPage2Fragment extends Fragment { // Written by Arda Toprak
     public static int position;
     private ImageButton backButton2;
     private View rootView;

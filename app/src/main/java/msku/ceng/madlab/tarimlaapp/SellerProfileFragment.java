@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class SellerProfileFragment extends Fragment {
+public class SellerProfileFragment extends Fragment { // Written by Arda Toprak
     private View rootView;
     private ImageButton backButton1;
     private Button logOutButton;

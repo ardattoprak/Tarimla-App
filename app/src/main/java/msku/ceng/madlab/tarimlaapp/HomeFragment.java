@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment  {
+public class HomeFragment extends Fragment  { // Written by Arda Toprak
     private RecyclerView rv;
     private ArrayList<Add> adds;
     private RVAdapter adapter;

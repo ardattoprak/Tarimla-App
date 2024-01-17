@@ -13,7 +13,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
-public class Constants {
+public class Constants { // Written by Arda Toprak
     public static ArrayList<Add> Adds = new ArrayList<>();
     public static ArrayList<UsersInfo> Users = new ArrayList<>();
     static FirebaseFirestore db ;

@@ -1,5 +1,5 @@
 package msku.ceng.madlab.tarimlaapp;
-public class UsersInfo {
+public class UsersInfo { // Written by Burak Yılmaz
     public String name;
     public String lastName;
     public String email;

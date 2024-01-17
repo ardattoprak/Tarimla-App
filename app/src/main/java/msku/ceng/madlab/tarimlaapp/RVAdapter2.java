@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class RVAdapter2 extends RecyclerView.Adapter<RVAdapter2.cardViewTasarimNesneleriniTutucu2> {
+public class RVAdapter2 extends RecyclerView.Adapter<RVAdapter2.cardViewTasarimNesneleriniTutucu2> { // Written by Arda Toprak
     private Context mcontext;
     private ArrayList<Add> addList;
 

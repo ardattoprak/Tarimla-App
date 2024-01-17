@@ -1,6 +1,6 @@
 package msku.ceng.madlab.tarimlaapp;
 
-public class Add {
+public class Add { // Written by Burak Yılmaz
     public String productName;
     public String description;
     public String city;

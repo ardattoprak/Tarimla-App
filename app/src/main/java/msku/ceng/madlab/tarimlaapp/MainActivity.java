@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity { // Written by Burak Yılmaz
     static FirebaseAuth auth;
     static FirebaseUser user;
     static MainActivity mainActivity;

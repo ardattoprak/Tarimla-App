@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-public class MyAddsFragment extends Fragment {
+public class MyAddsFragment extends Fragment { // Written by Arda Toprak
     private RecyclerView rv2;
     private ArrayList<Add> adds;
     private RVAdapter2 adapter;

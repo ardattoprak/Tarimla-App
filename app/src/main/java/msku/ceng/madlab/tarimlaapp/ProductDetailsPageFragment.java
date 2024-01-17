@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class ProductDetailsPageFragment extends Fragment {
+public class ProductDetailsPageFragment extends Fragment { // Written by Arda Toprak
     private ImageButton backButton1;
     private View rootView;
     private TextView productName;
@@ -27,7 +27,6 @@ public class ProductDetailsPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_product_details_page, container, false);
-
         return rootView;
     }
     @Override

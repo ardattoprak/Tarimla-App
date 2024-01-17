@@ -17,12 +17,12 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
     @Test
-    public void citiesCountTest() {
+    public void citiesCountTest() { // Written by Arda Toprak
         ArrayList<String> arrayList = Constants.getCitySpinnerChoices();
         assertEquals(81,arrayList.size());
     }
     @Test
-    public void productsCountTest() {
+    public void productsCountTest() { // Written by Arda Toprak
         ArrayList<String> arrayList = Constants.getProductSpinnerChoises();
         assertEquals(11,arrayList.size());
     }

@@ -25,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
-public class AddFragment extends Fragment {
+public class AddFragment extends Fragment {  // Written by Burak Yılmaz
     private Spinner productSpinner;
     private Spinner citySpinner;
     private ArrayList<String> spinnerProducts;

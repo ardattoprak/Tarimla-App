@@ -12,13 +12,12 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNesneleriniTutucu> {
+public class RVAdapter extends RecyclerView.Adapter<RVAdapter.cardViewTasarimNesneleriniTutucu> { // Written by Arda Toprak
     private Context mcontext;
     private ArrayList<Add> addList;
     public RVAdapter(Context mcontext, ArrayList<Add> addList) {
         this.mcontext = mcontext;
         this.addList = addList;
-
     }
     @Override
     public void onBindViewHolder(@NonNull cardViewTasarimNesneleriniTutucu holder, @SuppressLint("RecyclerView") int position) {
